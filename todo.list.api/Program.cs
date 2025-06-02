@@ -1,4 +1,7 @@
 
+using todo.list.application;
+using todo.list.persistance;
+
 namespace todo.list.api
 {
     public class Program
@@ -12,6 +15,9 @@ namespace todo.list.api
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            builder.Services.AddApplicationDependencies();
+            builder.Services.AddPersistanceDependencies(builder.Configuration);
 
             var app = builder.Build();
 

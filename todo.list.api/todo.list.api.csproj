@@ -14,4 +14,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\todo.list.application\todo.list.application.csproj" />
+    <ProjectReference Include="..\todo.list.persistance\todo.list.persistance.csproj" />
+  </ItemGroup>
+
 </Project>
