@@ -1,4 +1,6 @@
-﻿namespace todo.list.persistance;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace todo.list.persistance;
 
 public static class Dependencies
 {
