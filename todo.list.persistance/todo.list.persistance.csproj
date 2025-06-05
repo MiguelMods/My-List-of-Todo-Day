@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\todo.list.application\todo.list.application.csproj" />
     <ProjectReference Include="..\todo.list.domain\todo.list.domain.csproj" />
   </ItemGroup>
 
