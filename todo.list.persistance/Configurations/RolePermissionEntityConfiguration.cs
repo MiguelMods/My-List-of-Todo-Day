@@ -28,5 +28,36 @@ public class RolePermissionEntityConfiguration : IEntityTypeConfiguration<RolePe
         builder.Property(x => x.UpdatedAt).ValueGeneratedOnUpdate().HasDefaultValueSql("GETDATE()");
         builder.Property(x => x.UpdatedBy).IsRequired(false).HasMaxLength(50);
         builder.Property(x => x.RowGuid).IsRequired().HasDefaultValueSql("NEWID()");
+        builder.HasData(new RolePermissionEntity
+        {
+            RolePermissionId = 1,
+            RoleId = 1, // Generic role
+            PermissionId = 1, // View Todo Items
+            CreatedBy = "System"
+        }, new RolePermissionEntity
+        {
+            RolePermissionId = 2,
+            RoleId = 1, // Generic role
+            PermissionId = 2, // Create Todo Items
+            CreatedBy = "System"
+        }, new RolePermissionEntity
+        {
+            RolePermissionId = 3,
+            RoleId = 1, // Generic role
+            PermissionId = 3, // Update Todo Items
+            CreatedBy = "System"
+        }, new RolePermissionEntity
+        {
+            RolePermissionId = 4,
+            RoleId = 1, // Generic role
+            PermissionId = 4, // Delete Todo Items
+            CreatedBy = "System"
+        }, new RolePermissionEntity
+        {
+            RolePermissionId = 5,
+            RoleId = 2, // Administrator role
+            PermissionId = 5, // Create Todo List Items
+            CreatedBy = "System"
+        });
     }
 }

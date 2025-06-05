@@ -24,5 +24,18 @@ public class RoleEntityConfiguration : IEntityTypeConfiguration<RoleEntity>
             .WithOne()
             .HasForeignKey(rp => rp.RoleId)
             .OnDelete(DeleteBehavior.Cascade);
+        builder.HasData(new RoleEntity
+        {
+            RoleId = 1,
+            Name = "Generic",
+            Description = "Generic role with basic permissions",
+            CreatedBy = "System"
+        }, new RoleEntity
+        {
+            RoleId = 2,
+            Name = "Administrator",
+            Description = "Administrator role with Administrator permissions",
+            CreatedBy = "System"
+        });
     }
 }

@@ -23,6 +23,9 @@ public class UserEntityConfiguration : IEntityTypeConfiguration<UserEntity>
         builder.Property(x => x.UpdatedAt).ValueGeneratedOnUpdate().HasDefaultValueSql("GETDATE()");
         builder.Property(x => x.UpdatedBy).IsRequired(false).HasMaxLength(50);
         builder.Property(x => x.RowGuid).IsRequired().HasDefaultValueSql("NEWID()");
-
+        builder.HasMany(x => x.Roles)
+            .WithOne()
+            .HasForeignKey(x => x.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
