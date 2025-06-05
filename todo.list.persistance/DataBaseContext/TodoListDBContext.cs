@@ -6,7 +6,7 @@ namespace todo.list.persistance.DataBaseContext;
 
 public class TodoListDBContext(DbContextOptions<TodoListDBContext> dbContextOptions) : DbContext(dbContextOptions)
 {
-    public DbSet<PermissionEntity> permissionEntities { get; set; }
+    public DbSet<PermissionEntity> PermissionEntities { get; set; }
     public DbSet<RoleEntity> Roles { get; set; }
     public DbSet<RolePermissionEntity> RolePermissions { get; set; }
     public DbSet<TodoItemEntity> Todos { get; set; }
