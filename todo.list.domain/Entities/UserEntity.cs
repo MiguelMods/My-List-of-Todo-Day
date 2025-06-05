@@ -11,4 +11,5 @@ public class UserEntity : CommonEntity
     public string? Email { get; set; }
     public DateTime? LastLogin { get; set; }
     public IEnumerable<UserRoleEntity>? Roles { get; set; }
+    public IEnumerable<UserTodoListItem>? TodoListItems { get; set; }
 }
