@@ -12,6 +12,7 @@ public class TodoListDBContext(DbContextOptions<TodoListDBContext> dbContextOpti
     public DbSet<TodoItemEntity> Todos { get; set; }
     public DbSet<TodoListItemEntity> TodoLists { get; set; }
     public DbSet<UserEntity> Users { get; set; }
+    public DbSet<UserRoleEntity> UserRoles { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new PermissionEntityConfiguration());
@@ -20,5 +21,6 @@ public class TodoListDBContext(DbContextOptions<TodoListDBContext> dbContextOpti
         modelBuilder.ApplyConfiguration(new TodoItemEntityConfiguration());
         modelBuilder.ApplyConfiguration(new TodoListItemEntityConfiguration());
         modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new UserRoleEntityConfiguration());
     }
 }
