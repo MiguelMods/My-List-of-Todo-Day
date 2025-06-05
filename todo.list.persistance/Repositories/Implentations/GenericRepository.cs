@@ -9,7 +9,7 @@ namespace todo.list.persistance.Repositories.Implentations;
 public class GenericRepository<TEntity>(TodoListDBContext todoListDBContext) : IGenericRepository<TEntity>
     where TEntity : CommonEntity
 {
-    private TodoListDBContext TodoListDBContext { get; } = todoListDBContext;
+    public TodoListDBContext TodoListDBContext { get; } = todoListDBContext;
 
     public async Task<IEnumerable<TEntity>> GetAllAsync()
         => await TodoListDBContext.Set<TEntity>()
