@@ -10,5 +10,5 @@ public class UserEntity : CommonEntity
     public string? Password { get; set; }
     public string? Email { get; set; }
     public DateTime? LastLogin { get; set; }
-    public IEnumerable<RoleEntity>? Roles { get; set; }
+    public IEnumerable<UserRoleEntity>? Roles { get; set; }
 }
