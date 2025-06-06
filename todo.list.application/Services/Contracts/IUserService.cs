@@ -9,4 +9,8 @@ public interface IUserService : IGenericService<UserEntity>
     Task<UserEntity?> LoginAsync(string nickname, string password);
     Task<UserEntity?> LoginEmailAsync(string email, string password);
     Task<bool> UpdateUserPasswordByRowGuidAsync(string rowguid, string newPassword);
+    Task<UserEntity?> GetUserByEmailAsync(string email);
+    Task<UserEntity?> GetUserByEmailAndPasswordAsync(string email, string password);
+    Task<UserEntity?> GetUserByNickNameAsync(string nickName);
+    Task<UserEntity?> GetUserByNickNameAndPasswordAsync(string nickName, string password);
 }

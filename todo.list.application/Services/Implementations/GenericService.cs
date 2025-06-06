@@ -7,8 +7,8 @@ namespace todo.list.application.Services.Implementations;
 
 public abstract class GenericService<TEntity>(IUnitOfWork unitOfWork) : IGenericService<TEntity> where TEntity : CommonEntity
 {
-    public IUnitOfWork UnitOfWork { get; } = unitOfWork;
-    public IGenericRepository<TEntity> Repository { get; } = unitOfWork.GetGenericRepository<TEntity>();
+    protected readonly IUnitOfWork UnitOfWork = unitOfWork;
+    protected readonly IGenericRepository<TEntity> Repository = unitOfWork.GetGenericRepository<TEntity>();
 
     public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         => await Repository.GetAllAsync();
