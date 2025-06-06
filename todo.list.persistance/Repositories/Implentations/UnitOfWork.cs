@@ -6,7 +6,9 @@ namespace todo.list.persistance.Repositories.Implentations;
 
 public class UnitOfWork(TodoListDBContext todoListDBContext) : IUnitOfWork
 {
-    private TodoListDBContext TodoListDBContext { get; } = todoListDBContext;
+    private readonly TodoListDBContext TodoListDBContext = todoListDBContext;
+
+    public IUserRepository UserRepository => new UserRepository(TodoListDBContext);
 
     public IGenericRepository<TEntity> GetGenericRepository<TEntity>() where TEntity : CommonEntity => new GenericRepository<TEntity>(TodoListDBContext);
 
