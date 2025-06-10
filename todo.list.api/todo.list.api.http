@@ -1,6 +1,51 @@
-@todo.list.api_HostAddress = http://localhost:5129
+@todo.list.api_HostAddress = https://localhost:44367
+@user.rowguid = FB35C9D9-DBCD-4B96-866F-C737D20725D1
 
-GET {{todo.list.api_HostAddress}}/weatherforecast/
+### Account Register
+POST {{todo.list.api_HostAddress}}/api/account/register
+Accept: application/json
+content-type: application/json
+{
+  "Name": "Jose Miguel Ramos Mata",
+  "nickname": "jramos2",
+  "email": "jramosmata2@gmail.com",
+  "password": "jose@123A",
+  "PasswordConfirm": "jose@123A"
+}
+
+### Get All User
+GET {{todo.list.api_HostAddress}}/api/test
 Accept: application/json
 
-###
+### Get By Rowguid
+GET {{todo.list.api_HostAddress}}/api/test/{{user.rowguid}}
+Accept: application/json
+
+### POST - Add new user to db
+POST {{todo.list.api_HostAddress}}/api/test
+Accept: application/json
+content-type: application/json
+{
+  "name": "usuario de pruebas 2",
+  "nickname": "prueba2",
+  "password": "jose@123A",
+  "email": "prueba2@gmail.com",
+  "isActive": true,
+  "isDeleted": false,
+  "createdBy": "SYSTEM"
+}
+
+
+### PUT - Update user to db
+PUT {{todo.list.api_HostAddress}}/api/test
+Accept: application/json
+content-type: application/json
+{
+  "id": 1,
+  "name": "Miguel Jose Mata Ramos",
+  "nickname": "miguelmodd@gmail.com",
+  "password": "jose@123A",
+  "email": "miguelmodd@gmail.com",
+  "rowGuid": "FB35C9D9-DBCD-4B96-866F-C737D20725D1",
+  "updatedBy": "SYSTEM"
+}
